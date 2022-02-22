@@ -18,23 +18,29 @@ export default class Player extends Particle {
         this.input.add(RIGHT);
     }
 
+    move(timestamp) {
+        if (this.alive) {
+            const speed = 2 * timestamp;
+
+            if (this.input.active(UP)) {
+                this.speed.y -= speed;
+            }
+            if (this.input.active(DOWN)) {
+                this.speed.y += speed;
+            }
+            if (this.input.active(LEFT)) {
+                this.speed.x -= speed;
+            }
+            if (this.input.active(RIGHT)) {
+                this.speed.x += speed;
+            }
+
+            this.position.x += timestamp * this.speed.x / 1000;
+            this.position.y += timestamp * this.speed.y / 1000;
+        }
+    }
+
     update(timestamp) {
-        const speed = 2 * timestamp;
-
-        if (this.input.active(UP)) {
-            this.speed.y -= speed;
-        }
-        if (this.input.active(DOWN)) {
-            this.speed.y += speed;
-        }
-        if (this.input.active(LEFT)) {
-            this.speed.x -= speed;
-        }
-        if (this.input.active(RIGHT)) {
-            this.speed.x += speed;
-        }
-
-        this.position.x += timestamp * this.speed.x / 1000;
-        this.position.y += timestamp * this.speed.y / 1000;
+        
     }
 }

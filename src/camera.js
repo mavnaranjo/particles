@@ -29,7 +29,7 @@ export default class Camera {
         );
     }
 
-    update(timestamp) {
+    move(timestamp) {
         if (this.track) {
             this.position = this.track.position;
         }
