@@ -1,9 +1,5 @@
 import Game from './game.js';
 
-import { circleGrow } from "./physics.js";
-
-window.circleGrow = circleGrow;
-
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
 
