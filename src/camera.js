@@ -1,6 +1,9 @@
 export default class Camera {
-    constructor(context, zoom, width, height) {
+    constructor(context, track, zoom, width, height) {
         this.context = context;
+
+        this.track = track;
+
         this.zoom = zoom || 1;
         this.width = width;
         this.height = height;
@@ -24,6 +27,12 @@ export default class Camera {
             this.width / 2 - this.position.x,
             this.height / 2 - this.position.y
         );
+    }
+
+    update(timestamp) {
+        if (this.track) {
+            this.position = this.track.position;
+        }
     }
 
     draw(element) {

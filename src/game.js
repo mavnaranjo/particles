@@ -4,7 +4,6 @@ import Player from './player.js';
 
 export default class Game {
     constructor(context) {
-        this.camera = new Camera(context);
 
         this.particles = Array.apply(null, Array(10)).map(() => new Particle());
 
@@ -14,6 +13,8 @@ export default class Game {
             100,
             'Player'
         );
+
+        this.camera = new Camera(context, this.player);
 
         this.timestamp = 0;
 
@@ -42,6 +43,8 @@ export default class Game {
         });
 
         this.player.update(delta);
+
+        this.camera.update(delta);
     }
 
     draw() {
