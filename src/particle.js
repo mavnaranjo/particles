@@ -1,4 +1,4 @@
-import { circleGrow } from "./physics.js";
+import { circleGrowth } from "./physics.js";
 
 export default class Particle {
     constructor(position, speed, size, name) {
