@@ -51,7 +51,6 @@ export default class Game {
     }
 
     update(delta) {
-
         for (let i = 0; i < this.particles.length; i++) {
             for (let j = i + 1; j < this.particles.length; j++) {
                 if (circlesCollide(this.particles[i], this.particles[j])) {
@@ -63,6 +62,8 @@ export default class Game {
                 this.particles[i].collided(this.player);
             }
         }
+
+        this.particles = this.particles.sort((p1, p2) => p1.size - p2.size);
     }
 
     draw() {
