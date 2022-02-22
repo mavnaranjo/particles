@@ -9,8 +9,8 @@ export default class Particle {
         this.color = '#' + (Math.random()*0xFFFFFF<<0).toString(16);
 
         this.position = position ?? {
-            x: 1000 * Math.random() - 500,
-            y: 1000 * Math.random() - 500
+            x: 3000 * Math.random() - 1500,
+            y: 3000 * Math.random() - 1500
         };
 
         this.speed = speed ?? {

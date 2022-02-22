@@ -6,7 +6,7 @@ import { circlesCollide } from './physics.js';
 export default class Game {
     constructor(context) {
 
-        this.particles = Array.apply(null, Array(10)).map(() => new Particle());
+        this.particles = Array.apply(null, Array(100)).map(() => new Particle());
 
         this.player = new Player(
             { x: 0, y: 0},
