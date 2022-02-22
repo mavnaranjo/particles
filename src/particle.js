@@ -18,8 +18,10 @@ export default class Particle {
     }
 
     update(timestamp) {
-        this.speed.x += 50 * Math.random() - 25;
-        this.speed.y += 50 * Math.random() - 25;
+        if (!this.name) {
+            this.speed.x += 50 * Math.random() - 25;
+            this.speed.y += 50 * Math.random() - 25;
+        }
 
         this.position.x += timestamp * this.speed.x / 1000;
         this.position.y += timestamp * this.speed.y / 1000;

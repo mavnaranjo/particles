@@ -1,11 +1,19 @@
 import Camera from './camera.js';
 import Particle from './particle.js';
+import Player from './player.js';
 
 export default class Game {
     constructor(context) {
         this.camera = new Camera(context);
 
         this.particles = Array.apply(null, Array(10)).map(() => new Particle());
+
+        this.player = new Player(
+            { x: 0, y: 0},
+            { x: 0, y: 0},
+            100,
+            'Player'
+        );
 
         this.timestamp = 0;
 
@@ -32,6 +40,8 @@ export default class Game {
         this.particles.forEach(particle => {
             particle.update(delta);
         });
+
+        this.player.update(delta);
     }
 
     draw() {
@@ -42,5 +52,7 @@ export default class Game {
         this.particles.forEach(particle => {
             this.camera.draw(particle);
         });
+
+        this.camera.draw(this.player);
     }
 }
