@@ -11,7 +11,7 @@ export default class Game {
         this.player = new Player(
             { x: 0, y: 0},
             { x: 0, y: 0},
-            100,
+            50,
             'Player'
         );
 
