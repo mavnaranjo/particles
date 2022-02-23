@@ -23,8 +23,9 @@ resizeCanvas();
 // full screen for mobile
 
 document.addEventListener(
-    'touchstart',
+    'touchend',
     e => {
+        e.preventDefault();
         document.documentElement.requestFullscreen();
     },
     { once: true }

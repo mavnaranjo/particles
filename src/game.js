@@ -63,6 +63,12 @@ export default class Game {
             }
         }
 
+        for (let i = 0; i < this.particles.length; i++) {
+            if (!this.particles[i].alive) {
+                this.particles[i] = new Particle();
+            }
+        }
+
         this.particles = this.particles.sort((p1, p2) => p1.size - p2.size);
     }
 
