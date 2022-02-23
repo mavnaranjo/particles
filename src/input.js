@@ -1,5 +1,3 @@
-import merge from './utils.js';
-
 export default class Input {
 
     static Codes = {
